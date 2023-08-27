@@ -32,8 +32,16 @@ registerRoute(
     console.log(request);
     return (
       request.destination === 'style' ||
-
+      request.destination === 'script' ||
+      request.destination === 'worker'
     );
   },
-
+  newStaleWhileRevalidate({
+    cacheName: 'asset-cache',
+    plugins: [
+      newCacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  })
 );
