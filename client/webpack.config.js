@@ -19,7 +19,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: ',/index.html',
+        template: './index.html',
         title: 'PWA App'
       }),
       new MiniCssExtractPlugin(),
