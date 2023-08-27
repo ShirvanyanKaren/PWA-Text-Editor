@@ -28,6 +28,7 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }), 
       new WebpackPwaManifest({
+        fingerprints: false,
         name: 'PWA App',
         short_name: 'PWA App',
         description: 'Challenge for PWA Text Editor',
@@ -49,7 +50,7 @@ module.exports = () => {
       rules: [
         {        
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: ['style-loader', 'css-loader'],
         },
         {
           test: /\.m?js$/,
