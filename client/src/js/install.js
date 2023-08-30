@@ -25,3 +25,4 @@ window.addEventListener('appinstalled', (event) => {
     butInstall.textContent = 'Installed!';
     console.log( '👍 appinstalled', event);
 });
+
